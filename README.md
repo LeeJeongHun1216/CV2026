@@ -1,5 +1,4 @@
 # CV2026
-### Homework
 
 [Homework1-1](https://youtu.be/jQBcBZ859xE?si=d2F2WXn2HzMVACrh)
 
