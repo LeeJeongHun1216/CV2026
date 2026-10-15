@@ -6,45 +6,14 @@
 
 Homework2
 
+<img width="1339" height="1000" alt="모델 1" src="https://github.com/user-attachments/assets/65fd05d8-b4e0-4865-8daa-b58d38a9c986" />
+
+<img width="1330" height="1028" alt="모델 2" src="https://github.com/user-attachments/assets/8f33f652-58df-4a33-aa7c-1198870ad41b" />
+
+<img width="1327" height="1035" alt="모델 3" src="https://github.com/user-attachments/assets/e1c22fb4-940a-4a89-8da1-e0bf0f1be6fb" />
 
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.neural_network import MLPClassifier
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.inspection import DecisionBoundaryDisplay
-
-model1 = make_pipeline(
-    StandardScaler(),
-    MLPClassifier(hidden_layer_sizes=(), activation='logistic',
-                  solver='lbfgs', max_iter=3000, random_state=42)
-)
-model1.fit(X, y)
-lpy = model1.predict(X)
-
-fig, ax = plt.subplots(1, 3, figsize=(16, 5))
-
-ax[0].scatter(X[:, 0], X[:, 1], c=y, cmap='coolwarm', edgecolors='black')
-ax[0].set_title("Original Data")
-
-ax[1].set_title("Model 1: 1 Neuron")
-ax[1].text(0.5, 0.7, "Input: 2 features", ha='center', transform=ax[1].transAxes)
-ax[1].text(0.5, 0.5, "Output: 1 neuron", ha='center', transform=ax[1].transAxes)
-ax[1].text(0.5, 0.3, "No hidden layer", ha='center', transform=ax[1].transAxes)
-ax[1].axis('off')
-
-DecisionBoundaryDisplay.from_estimator(
-    model1, X, response_method='predict',
-    cmap='coolwarm', alpha=0.35, ax=ax[2]
-)
-ax[2].scatter(X[:, 0], X[:, 1], c=y, cmap='coolwarm', edgecolors='black')
-ax[2].set_title("Decision Boundary")
-
-plt.suptitle(f"Model 1: One Neuron | Accuracy: {np.mean(lpy == y) * 100:.2f}%")
-plt.tight_layout()
-plt.show()
 
 
 
